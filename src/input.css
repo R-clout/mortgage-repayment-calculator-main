@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "PlusJarkata";
+    src: url("/assets/fonts/static/PlusJakartaSans-Bold.ttf") format("ttf");
+  }
+  @font-face {
+    font-family: "PlusJarkataMedium";
+    src: url("/assets/fonts/static/PlusJakartaSans-Medium.ttf") format("ttf");
+  }
+}

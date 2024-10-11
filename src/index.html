@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link href="/src/output.css" rel="stylesheet">
+</head>
+
+<body class="m-0">
+  <div class="bg-White p-5">
+    <h1 class="text-[1.4rem] font-JarkataBold text-Slate-900">Mortgage Calculator</h1>
+    <button id="clearbutton" class="border-b-2 text-Slate-500">Clear All</button>
+
+    <form class="mt-6">
+      <label for="amount" class="tracking-wide text-Slate-700">Mortgage Amount</label>
+      <span class="w-full flex border mt-2 h-[2.5rem]  border-Slate-300 rounded-[0.2rem]">
+        <p class="text-Slate-900 pl-3 pt-2 bg-Slate-100 w-[2rem]" id="paragraph">€</p><input type="number" id="amount"
+          class="w-full pl-3 text-Slate-900 font-bold focus-within:outline-Lime "/>
+      </span>
+    </form>
+    <form class="mt-6">
+      <label for="rate" class="tracking-wide text-Slate-700">Mortgage Term</label>
+      <span class="w-full flex flex-row-reverse border mt-2 h-[2.5rem] rounded-[0.2rem] border-Slate-300">
+        <p class="text-Slate-900 pl-3 pt-1 bg-Slate-100 w-[4rem]" id="paragraph">years</p><input required type="number" id="years"
+          class="w-full font-bold pl-3 focus:border-Slate-100 focus-within:outline-Lime" />
+      </span>
+    </form>
+    <form class="mt-6">
+      <label for="rate" class="tracking-wide text-Slate-700">Interest Rate</label>
+      <span class="w-full flex flex-row-reverse mt-2 h-[2.5rem]">
+        <p class="text-Slate-900 pl-3 pt-1 bg-Slate-100 w-[2.5rem] border-y border-r border-l-0  border-Slate-300" id="paragraph">%</p><input type="number" id="interest"
+          class="w-full pl-3 font-bold border-Slate-300 rounded-l-[0.2rem] border border-r-0 focus-within:outline-Lime on" />
+      </span>
+    </form>
+    <form class="mt-6">
+      <label class="text-Slate-700">Mortgage Type</label>
+      <span class="flex mt-2 gap-3 w-full border p-2 rounded-[0.2rem] border-Slate-300  focus-within:bg-Lime focus-within:bg-opacity-25 focus-within:border-Lime "><input type="radio"
+          id="repayment" name="mortgage" value="repayment" class="checked:bg-Lime" />
+        <p class="font-semibold text-Slate-900 text-[1.1rem] ">Repayment</p>
+      </span>
+      <span class="flex mt-2 gap-3 w-full border p-2 rounded-[0.2rem]  border-Slate-300 focus-within:bg-Lime focus-within:border-Lime focus-within:bg-opacity-25"><input type="radio"
+          name="mortgage" id="interestOnly" value="interestOnly" class="border-Slate-500 " />
+        <p class="font-semibold text-Slate-900 text-[1.1rem]">Interest Only</p>
+      </span>
+    </form>
+
+    <button
+      class="flex justify-center rounded-[2rem] gap-3 py-[0.6rem] mt-5 bg-Lime border-none w-full border font-semibold text-Slate-900  tracking-wider" id="calculateRepayment"><img
+        src="/assets/images/icon-calculator.svg" class="h-[1.5rem]">Calculate
+      Repayments</button>
+
+  </div>
+
+
+  <div class="bg-Slate-900  mt-4 w-full text-center p-4" id="result-panel">
+    <img src="/assets/images/illustration-empty.svg" alt="illustration" class="mx-16" />
+    <h2 class="text-White text-[1.5rem]">Results shown here</h2>
+    <p class="text-Slate-700 mt-2 ">Complete the form and click “calculate repayments” to see what
+      your monthly repayments would be.</p>
+  </div>
+
+
+  <div class="bg-Slate-900 mt-4 w-full p-4 hidden" id="result">
+    <h2 class="text-White text-[1.4rem] font-semibold">Your results</h2>
+    <p class="text-Slate-300 text-[0.9rem] mt-2 ">Your results are shown below based on the information you provided. 
+      To adjust the results, edit the form and click “calculate repayments” again.
+    </p>
+    <div class="w-full bg-Slate-700 mt-8 p-4 rounded-lg border-t-4 border-t-Lime">
+      <h3 class="text-Slate-300 ">Your monthly repayments</h3>
+      <p class="text-Lime text-[2rem] font-semibold " id="repayMonthly"></p>
+      <hr class="my-3 border-Slate-500">
+      <h4 class="text-Slate-300">Total you'll repay over the term</h4>
+      <p class="mt-1 text-White text-[2rem] font-semibold" id="termRepay"></p>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
