@@ -1,44 +1,71 @@
 const clearButton = document.getElementById("clearbutton");
 const amount = document.getElementById("amount");
-const
 const term = document.getElementById("years");
 const rate = document.getElementById("interest");
 const radios = document.getElementsByName("mortgage");
-const mortgageType = document.getElementById("typeMortgage");
 const repayBtn = document.getElementById("calculateRepayment");
 const resultPanel = document.getElementById("result-panel");
+const amountError = document.getElementById('amount-error');
+const termError = document.getElementById("term-error");
+const rateError = document.getElementById("rate-error");
+const typeError = document.getElementById("type-error");
 const result = document.getElementById("result");
 const monthlyRepay = document.getElementById("repayMonthly");
 const termRepay = document.getElementById("termRepay");
 
 
 const unselected = amount.value == "" || term.value == "" || rate.value == "";
-const clearfunction = () => {
-    let aamountValue = amount.value;
-    let termValue = term.value;
-    let rateValue = rate.value;
-    let selected = valueSelected();
+
+    let selected = valueSelect();
 
 
-    amountVa
+
+repayBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+   let selected = valueSelect();
+    validateInput(amount, amountError);
+validateInput(term, termError);
+validateInput(rate, rateError);
+
+
+    
+    if(selected == null){
+        typeError.innerText = "This field is required";
+    } else {
+    typeError.innerText = "";
+    }
+
+    if(selected == "repayment"){
+        resultPanel.classList.add("hidden");
+        result.classList.remove("hidden");
+        monthlyRepay.innerText = `€${formatNumberWithCommas(mortgage())}`;
+        termRepay.innerText =  `€${formatNumberWithCommas(totalRepayment())}`;
+       }else if(selected == "interestOnly"){
+        resultPanel.classList.add("hidden");
+        result.classList.remove("hidden");
+        monthlyRepay.innerText = `€${formatNumberWithCommas(interestTerm())}`;
+        termRepay.innerText = `€${formatNumberWithCommas(interestRepay())}`;
+       } else if(selected == null){
+        console.log("empty")
+}
+})
+
+
+function validateInput(input, errorElement) {
+    const sibling = input.previousElementSibling;
+    if (!input.validity.valid) {
+        errorElement.innerText = "This field is required";
+        sibling.style.backgroundColor = "hsl(4, 69%, 50%)";
+        input.style.borderColor = "hsl(4, 69%, 50%)";
+        sibling.style.color = "hsl(0, 0%, 100%)";
+    } else {
+        errorElement.innerText = "";
+        sibling.style.removeProperty("background-color");
+        input.style.removeProperty("border-color");
+        sibling.style.removeProperty("color");
+    }
 }
 
-repayBtn.addEventListener("click", () => {
-   let selected = valueSelect();
-   if(selected == "repayment"){
-    resultPanel.classList.add("hidden");
-    result.classList.remove("hidden");
-    monthlyRepay.innerText = `€${formatNumberWithCommas(mortgage())}`;
-    termRepay.innerText =  `€${formatNumberWithCommas(totalRepayment())}`;
-   }else if(selected == "interestOnly"){
-    resultPanel.classList.add("hidden");
-    result.classList.remove("hidden");
-    monthlyRepay.innerText = `€${formatNumberWithCommas(interestTerm())}`;
-    termRepay.innerText = `€${formatNumberWithCommas(interestRepay())}`;
-   } else if(selected = "null" || unselected){
-    console.log("empty")
-   }
-})
 
 function valueSelect(){
     let selectedValue = null;
@@ -110,9 +137,11 @@ const totalRepayment = () => {
 }
 
 clearButton.addEventListener("click", () => {
-    console.log("Hello world")
+   amount.value = "";
+   term.value = "";
+   rate.value = "";
+   valueSelect() = "";
 })
-
 
 
 

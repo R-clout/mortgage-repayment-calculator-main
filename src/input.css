@@ -19,6 +19,3 @@
   border-color: hsl(61, 70%, 52%);
 }
 
-#container:has(input) #paragraph {
-  background-color: hsl(4, 69%, 50%);
-}

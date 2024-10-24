@@ -18,75 +18,59 @@
   <div class="bg-White p-5">
     <h1 class="text-[1.4rem] font-JarkataBold text-Slate-900">Mortgage Calculator</h1>
     <button id="clearbutton" class="border-b-2 text-Slate-500">Clear All</button>
+    <form novalidate class="mt-7" id="form">
+      <div class="input-control">
+        <label for="amount" class="tracking-wide text-Slate-700">Mortgage Amount </label>
+        <span class="flex mt-2 h-[2.5rem] container w-full">
+          <p class="text-Slate-900 pl-3 pt-2 border-Slate-300 border border-r-0 bg-Slate-100 w-[2rem] font-bold"
+            id="paragraph">€</p><input type="number" id="amount" required
+            class="w-full pl-3 text-Slate-900 font-bold focus:outline-Lime focus:border-0 border border-l-0 border-Slate-300" />
+        </span>
+        <p class="text-Red font-semibold mt-2 mb-5" id="amount-error"></p>
+      </div>
 
-    <form class="mt-6">
-      <label for="amount" class="tracking-wide text-Slate-700">Mortgage Amount</label>
-      <div class="hidden" id="container">
-      <span class="flex mt-2 h-[2.5rem] container w-full">
-        <p class="text-Slate-900 pl-3 pt-2 border-Slate-300 border border-r-0 bg-Slate-100 w-[2rem] font-bold" id="paragraph">€</p><input type="number" id="amount"
-          class="w-full pl-3 text-Slate-900 font-bold focus:outline-Lime focus:border-0 border border-l-0 border-Slate-300" />
-      </span>
-    </div>
-    <div class="" id="container">
-      <span class="flex mt-2 h-[2.5rem] container w-full">
-        <p class="text-White pl-3 pt-2 border-Red border border-r-0 bg-Slate-100 w-[2rem] font-bold" id="paragraph">€</p><input type="number" id="amount"
-          class="w-full pl-3 text-Slate-900 font-bold focus:outline-Lime focus:border-0 border border-l-0 border-Red" />
-      </span>
-      <p class="mt-1 text-Red font-semibold">This field is required</p>
-    </div>
-    </form>
-    <form class="mt-6">
-      <label for="rate" class="tracking-wide text-Slate-700">Mortgage Term</label>
-      <div class="hidden">
-      <span class="w-full flex flex-row-reverse border mt-2 h-[2.5rem] rounded-[0.2rem] border-Slate-300 container">
-        <p class="text-Slate-900 px-3 pt-1 bg-Slate-100 w-[4rem] font-bold" id="paragraph">years</p><input required type="number"
-          id="years" class="w-full font-bold pl-3 text-Slate-900 focus:outline-Lime" />
-      </span>
-    </div>
-    <div class="" id="container">
-      <span class="w-full flex flex-row-reverse border mt-2 h-[2.5rem] rounded-[0.2rem] border-Red container">
-        <p class="text-White px-3 pt-1 border border-Red w-[4rem] font-bold" id="paragraph">years</p><input required type="number"
-          id="years" class="w-full font-bold pl-3 text-Slate-900 focus-within:outline-Red" />
-      </span>
-      <p class="mt-1 font-semibold text-Red">This field is required</p>
-    </div>
-    </form>
-    <form class="mt-6">
-      <label for="rate" class="tracking-wide text-Slate-700">Interest Rate</label>
-      <div class="">
-      <span class="w-full flex flex-row-reverse mt-2 h-[2.5rem] container">
-        <p class="text-Slate-900 pl-3 pt-1 bg-Slate-100 w-[2.5rem] border-y border-r border-l-0  border-Slate-300 font-bold"
-          id="paragraph">%</p><input type="number" id="interest"
-          class="w-full pl-3 font-bold border-Slate-300 rounded-l-[0.2rem] border border-r-0 focus:outline-Lime" />
-      </span>
-    </div>
-    <div class="hidden" id="container">
-      <span class="w-full flex flex-row-reverse mt-2 h-[2.5rem] container">
-        <p class="text-White pl-3 pt-1 bg-Slate-100 w-[2.5rem] border-y border-r border-l-0  border-Red font-bold"
-          id="paragraph">%</p><input type="number" id="interest"
-          class="w-full pl-3 font-bold border-Red rounded-l-[0.2rem] border border-r-0 focus:outline-Red" />
-      </span>
-      <p class="mt-1 text-Red font-semibold">This field is required</p>
-    </div>
-    </form>
-    <form class="mt-6" id="typeMortgage">
-      <label class="text-Slate-700">Mortgage Type</label>
-      <span
-        class="flex mt-2 gap-3 w-full border p-2 rounded-[0.2rem] border-Slate-300  focus-within:bg-Lime focus-within:bg-opacity-25 focus-within:border-Lime "><input
-          type="radio" id="repayment" name="mortgage" value="repayment" class="checked:bg-Lime radio accent-Lime" />
-        <p class="font-semibold text-Slate-900 text-[1.1rem] ">Repayment</p>
-      </span>
-      <span
-        class="flex mt-2 gap-3 w-full border p-2 rounded-[0.2rem]  border-Slate-300 focus-within:bg-Lime focus-within:border-Lime focus-within:bg-opacity-25"><input
-          type="radio" name="mortgage" id="interestOnly" value="interestOnly" class="border-Slate-500 radio accent-Lime" />
-        <p class="font-semibold text-Slate-900 text-[1.1rem]">Interest Only</p>
-      </span>
-    </form>
+      <div class="input-control">
+        <label for="rate" class="tracking-wide text-Slate-700">Mortgage Term</label>
+        <span class="w-full flex flex-row-reverse mt-2 h-[2.5rem] rounded-[0.2rem] container">
+          <p class="text-Slate-900 px-3 pt-1 bg-Slate-100 w-[4rem] font-bold" id="paragraph">years</p><input required
+            type="number" id="years"
+            class="w-full font-bold pl-3 text-Slate-900 border border-Slate-300 focus:outline-Lime " />
+        </span>
+        <p class="text-Red font-semibold mt-2 mb-5" id="term-error"></p>
+      </div>
 
-    <button
-      class="flex justify-center rounded-[2rem] gap-3 py-[0.6rem] mt-5 bg-Lime border-none w-full border font-semibold text-Slate-900  tracking-wider"
-      id="calculateRepayment"><img src="/assets/images/icon-calculator.svg" class="h-[1.5rem]">Calculate
-      Repayments</button>
+      <div class="input-control">
+        <label for="rate" class="tracking-wide text-Slate-700">Interest Rate</label>
+        <span class="w-full flex flex-row-reverse mt-2 h-[2.5rem] container">
+          <p class="text-Slate-900 pl-3 pt-1 bg-Slate-100 w-[2.5rem] border-y border-r border-l-0  border-Slate-300 font-bold"
+            id="paragraph">%</p><input type="number" step="any" id="interest" required
+            class="w-full pl-3 font-bold border-Slate-300 rounded-l-[0.2rem] border border-r-0 focus:outline-Lime" />
+        </span>
+        <p class="text-Red font-semibold mt-2 mb-5" id="rate-error"></p>
+      </div>
+
+      <div class="input-control">
+        <label class="text-Slate-700">Mortgage Type</label>
+        <span
+          class="flex mt-2 gap-3 w-full border p-2 rounded-[0.2rem] border-Slate-300  focus-within:bg-Lime focus-within:bg-opacity-25 focus-within:border-Lime "><input
+            type="radio" id="repayment" name="mortgage" value="repayment" required
+            class="checked:bg-Lime radio accent-Lime sell" />
+          <p class="font-semibold text-Slate-900 text-[1.1rem] ">Repayment</p>
+        </span>
+        <span
+          class="flex mt-2 gap-3 w-full border p-2 rounded-[0.2rem]  border-Slate-300 focus-within:bg-Lime focus-within:border-Lime focus-within:bg-opacity-25"><input
+            type="radio" name="mortgage" id="interestOnly" value="interestOnly" required
+            class="border-Slate-500 radio accent-Lime " />
+          <p class="font-semibold text-Slate-900 text-[1.1rem]">Interest Only</p>
+        </span>
+        <p class="text-Red font-semibold mt-2 mb-5" id="type-error"></p>
+      </div>
+
+      <button
+        class="flex justify-center rounded-[2rem] gap-3 py-[0.6rem] mt-5 bg-Lime border-none w-full border font-semibold text-Slate-900  tracking-wider"
+        id="calculateRepayment"><img src="/assets/images/icon-calculator.svg" class="h-[1.5rem]">Calculate
+        Repayments</button>
+    </form>
 
   </div>
 

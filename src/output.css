@@ -614,6 +614,10 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -630,8 +634,8 @@ video {
   margin-top: 1.25rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
+.mt-7 {
+  margin-top: 1.75rem;
 }
 
 .mt-8 {
@@ -730,11 +734,6 @@ video {
 
 .border-none {
   border-style: none;
-}
-
-.border-Red {
-  --tw-border-opacity: 1;
-  border-color: hsl(4 69% 50% / var(--tw-border-opacity));
 }
 
 .border-Slate-300 {
@@ -860,6 +859,11 @@ video {
   color: hsl(61 70% 52% / var(--tw-text-opacity));
 }
 
+.text-Red {
+  --tw-text-opacity: 1;
+  color: hsl(4 69% 50% / var(--tw-text-opacity));
+}
+
 .text-Slate-300 {
   --tw-text-opacity: 1;
   color: hsl(203 41% 72% / var(--tw-text-opacity));
@@ -885,11 +889,6 @@ video {
   color: hsl(0 0% 100% / var(--tw-text-opacity));
 }
 
-.text-Red {
-  --tw-text-opacity: 1;
-  color: hsl(4 69% 50% / var(--tw-text-opacity));
-}
-
 .accent-Lime {
   accent-color: hsl(61, 70%, 52%);
 }
@@ -897,10 +896,6 @@ video {
 .container:has(input:focus) p {
   background-color: hsl(61, 70%, 52%);
   border-color: hsl(61, 70%, 52%);
-}
-
-#container:has(input) #paragraph {
-  background-color: hsl(4, 69%, 50%);
 }
 
 .checked\:bg-Lime:checked {
@@ -922,10 +917,6 @@ video {
   --tw-bg-opacity: 0.25;
 }
 
-.focus-within\:outline-Red:focus-within {
-  outline-color: hsl(4, 69%, 50%);
-}
-
 .focus\:border-0:focus {
   border-width: 0px;
 }
@@ -934,6 +925,3 @@ video {
   outline-color: hsl(61, 70%, 52%);
 }
 
-.focus\:outline-Red:focus {
-  outline-color: hsl(4, 69%, 50%);
-}
